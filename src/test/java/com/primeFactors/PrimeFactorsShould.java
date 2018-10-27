@@ -19,12 +19,13 @@ public class PrimeFactorsShould {
     public void factors() throws Exception {
       assertThat(primeFactorsOf(1), isListOf());
       assertThat(primeFactorsOf(2), isListOf(2));
+      assertThat(primeFactorsOf(3), isListOf(3));
   }
 
     private List<Integer> primeFactorsOf(int n) {
         ArrayList<Integer> factors = new ArrayList<>();
         if (n > 1)
-            factors.add(2);
+            factors.add(n);
         return factors;
     }
 }
