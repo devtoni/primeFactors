@@ -18,9 +18,16 @@ public class PrimeFactorsShould {
   @Test
     public void factors() throws Exception {
       assertThat(primeFactorsOf(1), isListOf());
+      assertThat(primeFactorsOf(2), isListOf(2));
   }
 
     private List<Integer> primeFactorsOf(int n) {
-      return new ArrayList<Integer>();
+        ArrayList<Integer> factors = new ArrayList<>();
+        if (n > 1)
+            factors.add(2);
+        return factors;
     }
 }
+
+//1st null to constant
+// Generalize to a variable (constant to variable)
