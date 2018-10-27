@@ -30,17 +30,11 @@ public class PrimeFactorsShould {
 
     private List<Integer> primeFactorsOf(int n) {
         ArrayList<Integer> factors = new ArrayList<>();
-        if (n > 1)
-            while (n % 2 == 0) {
-                factors.add(2);
-                n /= 2;
+        for (int divisor = 2; n > 1; divisor++) {
+            for (; n % divisor == 0; n/= divisor) {
+                factors.add(divisor);
             }
-        while (n % 3 == 0) {
-            factors.add(3);
-            n /= 3;
         }
-            if (n > 1)
-              factors.add(n);
         return factors;
     }
 }
