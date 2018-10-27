@@ -21,12 +21,16 @@ public class PrimeFactorsShould {
       assertThat(primeFactorsOf(2), isListOf(2));
       assertThat(primeFactorsOf(3), isListOf(3));
       assertThat(primeFactorsOf(4), isListOf(2,2));
+      assertThat(primeFactorsOf(5), isListOf(5));
+      assertThat(primeFactorsOf(6), isListOf(2,3));
+      assertThat(primeFactorsOf(7), isListOf(7));
+      assertThat(primeFactorsOf(8), isListOf(2,2,2));
   }
 
     private List<Integer> primeFactorsOf(int n) {
         ArrayList<Integer> factors = new ArrayList<>();
         if (n > 1)
-            if (n % 2 == 0) {
+            while (n % 2 == 0) {
                 factors.add(2);
                 n /= 2;
             }
